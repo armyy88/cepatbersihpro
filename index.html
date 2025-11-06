@@ -3,43 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jasa Cleaning Service dan General Clean</title>
-  <style>
-    /* Reset sederhana */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <title>CepatBersihPRO | Jasa Cleaning Service Profesional</title>
+  <meta name="description" content="CepatBersihPRO menyediakan jasa cleaning service profesional untuk rumah, kantor, dan gedung. Melayani rutin cleaning, deep cleaning, office cleaning, dan general cleaning di seluruh Jabodetabek.">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/565/565547.png">
 
-    html, body {
-      height: 100%;
-      width: 100%;
-      font-family: 'Poppins', sans-serif;
-      background: #f0f4f8;
-    }
-
-    .iframe-container {
-      position: fixed; /* full layar */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .iframe-container iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
+  <!-- ✅ Schema Markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CepatBersihPRO",
+    "image": "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8",
+    "url": "https://cepatbersihpro.com",
+    "telephone": "+62851744444",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Kebersihan No.10",
+      "addressLocality": "Jakarta Selatan",
+      "addressRegion": "DKI Jakarta",
+      "postalCode": "12190",
+      "addressCountry": "ID"
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/cepatbersihpro",
+      "https://wa.me/62851744444"
+    ],
+    "description": "Jasa kebersihan profesional untuk rumah, kantor, dan gedung. Melayani rutin cleaning, deep cleaning, office cleaning, dan general cleaning."
+  }
+  </script>
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>CepatBersihPRO</h1>
+      <nav>
+        <a href="#services">Layanan</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#booking">Pesan</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="iframe-container">
-    <iframe src="https://bintoroclean.co.id" title="Iframe Aman" loading="lazy"></iframe>
-  </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Bersih Cepat, Rapi, dan Profesional</h2>
+      <p>Jasa kebersihan terpercaya untuk rumah, kantor, dan gedung di Jabodetabek. Tim profesional kami siap memberikan layanan terbaik untuk Anda.</p>
+      <a href="#booking" class="btn">Pesan Sekarang</a>
+    </div>
+  </section>
 
+  <section id="services" class="services">
+    <h2>Layanan Kami</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <h3>Rutin Cleaning</h3>
+        <p>Pembersihan harian atau mingguan untuk rumah dan kantor agar tetap bersih dan nyaman setiap hari.</p>
+      </div>
+      <div class="service-item">
+        <h3>Deep Cleaning</h3>
+        <p>Pembersihan menyeluruh untuk area yang sulit dijangkau, cocok untuk persiapan sebelum dan sesudah acara.</p>
+      </div>
+      <div class="service-item">
+        <h3>Office Cleaning</h3>
+        <p>Layanan kebersihan khusus kantor untuk menjaga lingkungan kerja tetap sehat, bersih, dan produktif.</p>
+      </div>
+      <div class="service-item">
+        <h3>General Cleaning</h3>
+        <p>Pembersihan umum seluruh area gedung, termasuk kaca, lantai, toilet, dan area publik.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>Tentang Kami</h2>
+    <p><strong>CepatBersihPRO</strong> adalah perusahaan jasa kebersihan profesional yang berkomitmen menjaga kebersihan lingkungan Anda. Kami melayani area Jabodetabek dengan tim berpengalaman, ramah, dan menggunakan peralatan modern yang aman.</p>
+    <p>Tujuan kami adalah memberikan layanan cepat, efisien, dan hasil maksimal untuk kebutuhan cleaning service Anda.</p>
+  </section>
+
+  <section id="booking" class="booking">
+    <h2>Form Pemesanan</h2>
+    <p>Isi form di bawah ini untuk memesan layanan kami. Tim kami akan menghubungi Anda segera melalui WhatsApp.</p>
+
+    <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="name" placeholder="Nama Anda" required>
+      <input type="text" id="address" placeholder="Alamat Lengkap" required>
+      <select id="service" required>
+        <option value="">Pilih Layanan</option>
+        <option>Rutin Cleaning</option>
+        <option>Deep Cleaning</option>
+        <option>Office Cleaning</option>
+        <option>General Cleaning</option>
+      </select>
+      <textarea id="message" placeholder="Catatan tambahan (opsional)"></textarea>
+      <button type="submit" class="btn">Kirim via WhatsApp</button>
+    </form>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Pertanyaan Umum (FAQ)</h2>
+    <div class="faq-item">
+      <h3>Apakah layanan tersedia untuk luar Jabodetabek?</h3>
+      <p>Saat ini kami fokus melayani area Jabodetabek, namun proyek besar dapat kami pertimbangkan di luar area tersebut.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Apakah membawa peralatan sendiri?</h3>
+      <p>Ya, tim kami membawa seluruh perlengkapan dan cairan pembersih profesional.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Bagaimana cara pemesanan layanan?</h3>
+      <p>Anda dapat mengisi form pemesanan di atas atau langsung klik tombol WhatsApp kami.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Ingin konsultasi atau booking layanan? Hubungi kami melalui WhatsApp atau email di bawah ini.</p>
+    <a href="https://wa.me/62851744444" class="btn">Chat WhatsApp Sekarang</a>
+    <p>Email: cs@cepatbersihpro.com</p>
+    <p>Telepon: 0851-7444-44</p>
+    <p>Alamat: Jl. Kebersihan No.10, Jakarta Selatan</p>
+  </section>
+
+  <section id="privacy" class="privacy">
+    <h2>Kebijakan Privasi</h2>
+    <p>CepatBersihPRO menghormati privasi setiap pelanggan. Informasi pribadi yang Anda berikan melalui situs ini hanya digunakan untuk keperluan komunikasi dan layanan kami. Kami tidak membagikan data Anda kepada pihak ketiga tanpa izin.</p>
+    <p>Untuk pertanyaan terkait kebijakan privasi, silakan hubungi kami di <strong>cs@cepatbersihpro.com</strong>.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CepatBersihPRO. All Rights Reserved.</p>
+  </footer>
+
+  <!-- ✅ WhatsApp Send Script -->
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+      const waUrl = `https://wa.me/62851744444?text=Halo CepatBersihPRO!%0ASaya ingin memesan layanan:%0A- Nama: ${name}%0A- Alamat: ${address}%0A- Layanan: ${service}%0A- Catatan: ${message}`;
+      window.open(waUrl, '_blank');
+    }
+  </script>
 </body>
 </html>
