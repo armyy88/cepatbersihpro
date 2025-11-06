@@ -8,6 +8,33 @@
   <meta name="robots" content="index, follow">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/565/565547.png">
+
+  <!-- ✅ Schema Markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CepatBersihPRO",
+    "image": "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8",
+    "url": "https://cepatbersihpro.com",
+    "telephone": "+62851744444",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Kebersihan No.10",
+      "addressLocality": "Jakarta Selatan",
+      "addressRegion": "DKI Jakarta",
+      "postalCode": "12190",
+      "addressCountry": "ID"
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/cepatbersihpro",
+      "https://wa.me/62851744444"
+    ],
+    "description": "Jasa kebersihan profesional untuk rumah, kantor, dan gedung. Melayani rutin cleaning, deep cleaning, office cleaning, dan general cleaning."
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -16,6 +43,7 @@
       <nav>
         <a href="#services">Layanan</a>
         <a href="#about">Tentang Kami</a>
+        <a href="#booking">Pesan</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Kontak</a>
       </nav>
@@ -26,7 +54,7 @@
     <div class="hero-content">
       <h2>Bersih Cepat, Rapi, dan Profesional</h2>
       <p>Jasa kebersihan terpercaya untuk rumah, kantor, dan gedung di Jabodetabek. Tim profesional kami siap memberikan layanan terbaik untuk Anda.</p>
-      <a href="https://wa.me/62851744444" class="btn">Hubungi Kami via WhatsApp</a>
+      <a href="#booking" class="btn">Pesan Sekarang</a>
     </div>
   </section>
 
@@ -54,15 +82,34 @@
 
   <section id="about" class="about">
     <h2>Tentang Kami</h2>
-    <p>CepatBersihPRO adalah perusahaan jasa kebersihan profesional yang berkomitmen menjaga kebersihan lingkungan Anda. Kami melayani area Jabodetabek dengan tim berpengalaman, ramah, dan menggunakan peralatan modern yang aman.</p>
+    <p><strong>CepatBersihPRO</strong> adalah perusahaan jasa kebersihan profesional yang berkomitmen menjaga kebersihan lingkungan Anda. Kami melayani area Jabodetabek dengan tim berpengalaman, ramah, dan menggunakan peralatan modern yang aman.</p>
     <p>Tujuan kami adalah memberikan layanan cepat, efisien, dan hasil maksimal untuk kebutuhan cleaning service Anda.</p>
+  </section>
+
+  <section id="booking" class="booking">
+    <h2>Form Pemesanan</h2>
+    <p>Isi form di bawah ini untuk memesan layanan kami. Tim kami akan menghubungi Anda segera melalui WhatsApp.</p>
+
+    <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
+      <input type="text" id="name" placeholder="Nama Anda" required>
+      <input type="text" id="address" placeholder="Alamat Lengkap" required>
+      <select id="service" required>
+        <option value="">Pilih Layanan</option>
+        <option>Rutin Cleaning</option>
+        <option>Deep Cleaning</option>
+        <option>Office Cleaning</option>
+        <option>General Cleaning</option>
+      </select>
+      <textarea id="message" placeholder="Catatan tambahan (opsional)"></textarea>
+      <button type="submit" class="btn">Kirim via WhatsApp</button>
+    </form>
   </section>
 
   <section id="faq" class="faq">
     <h2>Pertanyaan Umum (FAQ)</h2>
     <div class="faq-item">
-      <h3>Apakah layanan tersedia untuk area luar Jabodetabek?</h3>
-      <p>Saat ini kami fokus melayani area Jabodetabek, namun untuk proyek besar kami dapat mempertimbangkan di luar area tersebut.</p>
+      <h3>Apakah layanan tersedia untuk luar Jabodetabek?</h3>
+      <p>Saat ini kami fokus melayani area Jabodetabek, namun proyek besar dapat kami pertimbangkan di luar area tersebut.</p>
     </div>
     <div class="faq-item">
       <h3>Apakah membawa peralatan sendiri?</h3>
@@ -70,7 +117,7 @@
     </div>
     <div class="faq-item">
       <h3>Bagaimana cara pemesanan layanan?</h3>
-      <p>Anda dapat menghubungi kami melalui tombol WhatsApp atau melalui email di bawah ini.</p>
+      <p>Anda dapat mengisi form pemesanan di atas atau langsung klik tombol WhatsApp kami.</p>
     </div>
   </section>
 
@@ -92,5 +139,18 @@
   <footer>
     <p>&copy; 2025 CepatBersihPRO. All Rights Reserved.</p>
   </footer>
+
+  <!-- ✅ WhatsApp Send Script -->
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+      const waUrl = `https://wa.me/62851744444?text=Halo CepatBersihPRO!%0ASaya ingin memesan layanan:%0A- Nama: ${name}%0A- Alamat: ${address}%0A- Layanan: ${service}%0A- Catatan: ${message}`;
+      window.open(waUrl, '_blank');
+    }
+  </script>
 </body>
 </html>
